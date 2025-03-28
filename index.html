@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charity Sign-Up</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Support Our Charity</h1>
+    </header>
+    <section>
+        <p>Join us in making a difference! Supporting this charity helps provide essential resources to those in need. Here are three reasons to sign up:</p>
+        <ul>
+            <li>Providing food and shelter to the homeless.</li>
+            <li>Ensuring education for underprivileged children.</li>
+            <li>Supporting medical aid for those who cannot afford it.</li>
+        </ul>
+    </section>
+    <form id="signup-form">
+        <label for="first-name">First Name:</label>
+        <input type="text" id="first-name" name="first-name" required>
+        
+        <label for="last-name">Last Name:</label>
+        <input type="text" id="last-name" name="last-name" required>
+        
+        <label>Sex:</label>
+        <input type="radio" id="male" name="sex" value="male" required> <label for="male">Male</label>
+        <input type="radio" id="female" name="sex" value="female" required> <label for="female">Female</label>
+        <input type="radio" id="prefer-not-say" name="sex" value="prefer-not-say" required> <label for="prefer-not-say">Prefer not to say</label>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="contact">Contact Number:</label>
+        <input type="text" id="contact" name="contact">
+        
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+    
+    <script>
+        document.getElementById('signup-form').addEventListener('submit', function(event) {
+            let requiredFields = document.querySelectorAll('[required]');
+            for (let field of requiredFields) {
+                if (!field.value) {
+                    alert('Please fill in all required fields!');
+                    event.preventDefault();
+                    return;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
